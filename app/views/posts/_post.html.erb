@@ -8,7 +8,7 @@
 
     <p><%= post.body.truncate(200) %></p>
 
-    <p class='text-muted'><%= 0 %> Comentário</p>
+    <p class='text-muted'><%= pluralize(post.commments.count, 'Comentário') %></p>
 
     <%= link_to "Ler Artigo", post, class:"btn btn-primary" %>
     <%= link_to "Editar", edit_post_path(post), class:"btn btn-secondary" %>
