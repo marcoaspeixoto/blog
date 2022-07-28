@@ -16,23 +16,26 @@
     <div class="text-center">
       <h4>
         <%= pluralize(@post.commments.count, 'Comentário') %>
-        <span class="badge bg-success">Seja o primeiro a comentar!</span>
+
+        <% if @post.commments.none? %>
+          <span class="badge bg-success">Seja o primeiro a comentar!</span>
+        <% end %>
       </h4>
     </div>
 
     <%= form_with model: @commment, local: true do |form| %>
       <div class="form-group mb-3">
         <%= form.label "Autor" %>
-        <%= form.text_field :author, class:'form-control' %>
+        <%= form.text_field :author, class: 'form-control' %>
       </div>
 
       <div class="form-group mb-3">
         <%= form.label "Comentário" %>
-        <%= form.text_area :body, class:'form-control', rows: 5 %>
+        <%= form.text_area :body, class: 'form-control', rows: 3 %>
       </div>
 
       <%= form.submit 'Enviar', class: 'btn btn-primary',
-                      data: {disable_with: 'Enviando...'} %>
+                      data: { disable_with: 'Enviando...' } %>
     <% end %>
 
   </div>
