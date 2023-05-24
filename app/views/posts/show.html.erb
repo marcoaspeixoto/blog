@@ -24,6 +24,7 @@
     </div>
 
     <%= form_with model: @commment, local: true do |form| %>
+      <%= form.hidden_field :post_id, value: @post.id %>
       <div class="form-group mb-3">
         <%= form.label "Autor" %>
         <%= form.text_field :author, class: 'form-control' %>
