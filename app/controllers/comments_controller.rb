@@ -1,12 +1,12 @@
-class CommmentsController < ApplicationController
+class CommentsController < ApplicationController
   def create
     binding.pry
     #comment = Comment.create!(comments_params)
   end
 
   private
-  def commments_params
-    params.require(:commment).permit(:post_id, :author, :body)
+  def comments_params
+    params.require(:comment).permit(:post_id, :author, :body)
   end
 end
 
