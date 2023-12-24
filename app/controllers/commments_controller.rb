@@ -1,6 +1,6 @@
 class CommmentsController < ApplicationController
   def create
-    commment = Commment.create!(comments_params)
+    commment = Commment.create!(commments_params)
 
     redirect_to commment.post, notice: 'O seu comentário foi enviado.'
   end
