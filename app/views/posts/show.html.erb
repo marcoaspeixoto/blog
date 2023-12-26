@@ -23,22 +23,23 @@
       </h4>
     </div>
 
-    <%= form_with model: @commment, local: true do |form| %>
-      <%= form.hidden_field :post_id, value: @post.id %>
-      <div class="form-group mb-3">
-        <%= form.label "Autor" %>
-        <%= form.text_field :author, class: 'form-control' %>
-      </div>
+    <div class="shadow-sm m-3 bg-light rounded">
+      <%= form_with model: @commment, local: true do |form| %>
+        <%= form.hidden_field :post_id, value: @post.id %>
+        <div class="form-group mb-3">
+          <%= form.label "Autor" %>
+          <%= form.text_field :author, class: 'form-control' %>
+        </div>
 
-      <div class="form-group mb-3">
-        <%= form.label "Comentário" %>
-        <%= form.text_area :body, class: 'form-control', rows: 3 %>
-      </div>
+        <div class="form-group mb-3">
+          <%= form.label "Comentário" %>
+          <%= form.text_area :body, class: 'form-control', rows: 3 %>
+        </div>
 
-      <%= form.submit 'Enviar', class: 'btn btn-primary',
-                      data: { disable_with: 'Enviando...' } %>
-    <% end %>
-
+        <%= form.submit 'Enviar', class: 'btn btn-primary',
+                        data: { disable_with: 'Enviando...' } %>
+      <% end %>
+    </div>
   </div>
 </div>
 
