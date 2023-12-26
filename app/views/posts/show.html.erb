@@ -11,6 +11,7 @@
   <div class="px-5">
     <%= @post.body.gsub("\n", "<br>").html_safe %>
   </div>
+</div>
 
   <div class="m-5">
     <div class="text-center">
@@ -23,7 +24,7 @@
       </h4>
     </div>
 
-    <div class="shadow-sm m-3 bg-light rounded">
+    <div class="shadow-sm m-3 p-3 bg-light rounded">
       <%= form_with model: @commment, local: true do |form| %>
         <%= form.hidden_field :post_id, value: @post.id %>
         <div class="form-group mb-3">
@@ -40,7 +41,21 @@
                         data: { disable_with: 'Enviando...' } %>
       <% end %>
     </div>
-  </div>
-</div>
+
+    <% @commments.each do |commment| %>
+      <div class="shadow-sm m-3 p-3 bg-light rounde">
+        <div class="row">
+          <div class="col">
+            <strong><%= commment.author %></strong>
+          </div>
+
+          <div class="col text-lg-end">
+            <em><%= time_ago_in_words commment.created_at %> atrás</em>
+          </div>
+        </div>
+      </div>
+    <% end %>
+   </div>
+
 
 

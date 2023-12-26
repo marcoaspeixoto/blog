@@ -8,6 +8,7 @@ class PostsController < ApplicationController
 
   # GET /posts/1 or /posts/1.json
   def show
+    @commments = @post.commments
     @commment = Commment.new
   end
 
