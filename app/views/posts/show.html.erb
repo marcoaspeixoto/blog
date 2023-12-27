@@ -50,7 +50,10 @@
           </div>
 
           <div class="col text-lg-end">
-            <em><%= time_ago_in_words commment.created_at %> atrás</em>
+            <em data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Tooltip on top">
+              <%= time_ago_in_words commment.created_at %> atrás
+            </em>
+            </button>
           </div>
         </div>
       </div>
