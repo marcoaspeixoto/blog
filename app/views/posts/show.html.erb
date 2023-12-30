@@ -50,10 +50,9 @@
           </div>
 
           <div class="col text-lg-end">
-            <em data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Tooltip on top">
+            <em data-bs-toggle="tooltip" data-bs-placement="top" title="<%= l commment.created_at, format: :long %>">
               <%= time_ago_in_words commment.created_at %> atrás
             </em>
-            </button>
           </div>
         </div>
       </div>
