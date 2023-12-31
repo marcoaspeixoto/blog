@@ -55,6 +55,10 @@
             </em>
           </div>
         </div>
+
+        <hr>
+
+        <%= sanitize commment.body.gsub("\n", "<br>").html_safe %>
       </div>
     <% end %>
    </div>
